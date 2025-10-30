@@ -1,0 +1,212 @@
+/* about-us.component.css */
+.about-us-section {
+ background: linear-gradient(180deg, #212529 0%, #607d9a 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h2{
+  color:rgb(255, 253, 253)
+}
+
+/* Header Styles */
+.about-us-section h2.display-4 {
+  font-weight: 300;
+  letter-spacing: -0.5px;
+  color: #ffffff !important;
+}
+
+.about-us-section .lead {
+  font-weight: 300;
+  font-size: 1.25rem;
+  color:white !important;
+}
+
+/* Card Styles */
+.about-us-section .card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.about-us-section .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1) !important;
+  border-color: #007bff !important;
+}
+
+.about-us-section .card-body {
+  padding: 2.5rem 2rem;
+}
+
+/* Icon Styles */
+.about-us-section .fas {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 1;
+}
+
+/* Team Section */
+.about-us-section .team-card {
+  transition: all 0.4s ease;
+  border: 1px solid #e9ecef !important;
+}
+
+.about-us-section .team-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+.team-image img {
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+  border: 1px solid #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.team-card:hover .team-image img {
+  border-color: #007bff;
+  transform: scale(1.05);
+}
+
+.about-us-section .card-title {
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.about-us-section .card-subtitle {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.about-us-section .card-text {
+  color: #5a6c7d !important;
+  line-height: 1.6;
+  font-size: 1.5rem;
+}
+
+/* CTA Section */
+.about-us-section .bg-primary {
+  background: linear-gradient(135deg, #007bff, #0056b3) !important;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-us-section .bg-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+  background-size: cover;
+}
+
+.about-us-section .btn-light {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid transparent;
+  color: #007bff;
+  font-weight: 600;
+  padding: 12px 40px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.about-us-section .btn-light:hover {
+  background: #fff;
+  color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Text Colors */
+.about-us-section .text-primary {
+  color: #007bff !important;
+}
+
+.about-us-section .text-muted {
+  color: #000000 !important;
+  font-size: medium;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-us-section .card-body {
+    padding: 2rem 1.5rem;
+  }
+  
+  .about-us-section h2.display-4 {
+    font-size: 5rem;
+  }
+  
+  .team-image img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .about-us-section .bg-primary {
+    padding: 3rem 1.5rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-us-section .card-body {
+    padding: 1.5rem 1rem;
+  }
+  
+  .about-us-section h2.display-4 {
+    font-size: 5rem;
+  }
+}
+
+/* Animation for cards on load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-us-section .card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.about-us-section .card:nth-child(1) { animation-delay: 0.1s; }
+.about-us-section .card:nth-child(2) { animation-delay: 0.2s; }
+.about-us-section .card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Smooth transitions for all interactive elements */
+.about-us-section * {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom border radius */
+.about-us-section .card,
+.about-us-section .bg-primary {
+  border-radius: 6px !important;
+}
+
+.about-us-section .team-image img {
+  border-radius: 50% !important;
+}
+
+/* Subtle hover effects for team member names */
+.about-us-section .team-card .card-title {
+  transition: color 0.3s ease;
+}
+
+.about-us-section .team-card:hover .card-title {
+  color: #838689 !important;
+}

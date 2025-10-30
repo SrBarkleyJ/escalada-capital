@@ -1,0 +1,99 @@
+.list-column {
+  height: 400px;
+  overflow-y: auto;
+}
+
+.stock-wrapper {
+  margin: 0 -0.5rem; /* align with bootstrap row */
+}
+
+.stock-wrapper > .list-column,
+.stock-wrapper > .chart-column {
+  padding: 0 0.5rem; /* symmetric padding left/right */
+}
+
+.indices-grid {
+  padding: 1rem;
+}
+
+.table th { font-weight: 600; font-size: 0.95rem; }
+.table td { vertical-align: middle; font-size: 0.92rem; padding-top: 0.45rem; padding-bottom: 0.45rem; }
+
+.index-card {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.index-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.index-card.active {
+  border-color: #007bff;
+  box-shadow: 0 0 0 15px rgba(0,123,255,0.2);
+}
+
+.index-content {
+  text-align: center;
+}
+
+.index-icon {
+  margin-bottom: 0.5rem;
+  width: 76px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f8f9fa; /* neutral background for symbol */
+}
+
+.index-icon.symbol-only {
+  font-family: monospace, 'Courier New', monospace;
+  font-size: 0.8rem;
+  padding: 6px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.index-fallback {
+  font-size: 1.25rem;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f8f9fa;
+  color: #2c3e50;
+}
+
+.index-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2c3e50;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.chart-container {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 6px;
+  height: 400px; /* ensure same size as list */
+}
+
+@media (max-width: 767px) {
+  .list-column { height: auto; }
+  .chart-container { height: 300px; }
+}

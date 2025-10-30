@@ -1,0 +1,46 @@
+/* --- MAIN LAYOUT --- */
+.site-main {
+  min-height: 100vh; /* Ocupa toda la pantalla si hay poco contenido */
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- HERO --- */
+.hero {
+  background: linear-gradient(180deg, #212529 0%, #607d9a 100%);
+  color: white;
+}
+
+/* --- CONTENIDO DINÁMICO --- */
+.dynamic-section {
+  flex-grow: 1; /* Empuja el footer hacia abajo si el contenido es corto */
+}
+
+/* --- FOOTER --- */
+.site-footer {
+  width: 100%;
+  background: linear-gradient(180deg, #212529 0%, #607d9a 100%);
+ 
+  padding-top: 3rem; /* 👈 separa el footer del contenido principal */
+  padding-bottom: 1.5rem;
+  margin-top: 4rem; /* espacio visual adicional arriba */
+}
+
+.site-footer a {
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+  color: #0d6efd;
+}
+.brand-title{
+	font-size: 4rem;
+}
+.brand-logo{
+	height: 300px;
+	display: inline
+}
+.bi-bar-chart-fill{
+  height: 100%;
+}

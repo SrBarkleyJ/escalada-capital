@@ -1,0 +1,74 @@
+<section id="personal" class="about-us-section py-5">
+  <div class="container">
+    <!-- Header -->
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h2 class="display-4 fw-bold mb-3">Quiénes Somos</h2>
+        <h3>Expertos en datos financieros y tecnología de vanguardia</h3>
+      </div>
+    </div>
+
+    <!-- Misión y Visión -->
+    <div class="row mb-5">
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center p-4">
+            <i class="fas fa-bullseye fa-3x mb-3"></i>
+            <h4 class="card-title">Nuestra Misión</h4>
+            <p class="card-text">
+              Proporcionar acceso democratizado a datos financieros en tiempo real, 
+              empoderando a inversores y entusiastas del mercado con herramientas 
+              profesionales de análisis.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center p-4">
+            <i class="fas fa-eye fa-3x text-primary mb-3"></i>
+            <h4 class="card-title">Nuestra Visión</h4>
+            <p class="card-text">
+              Ser la plataforma de referencia para el análisis de índices bursátiles 
+              globales, combinando tecnología avanzada con una experiencia de usuario excepcional.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+  <div class="col-12 text-center mb-5">
+    <h1 class="fw-bold">Nuestro Equipo</h1>
+    <h3>Conoce a las personas detrás de nuestra plataforma</h3>
+  </div>
+  
+  <div class="col-md-4 mb-4" *ngFor="let member of teamMembers">
+    <div class="card team-card border-0 shadow-sm h-100">
+      <div class="card-body text-center p-4">
+        <div class="team-image mb-3">
+          <img [src]="member.image"
+               [alt]="member.name" 
+               class="rounded-circle img-fluid"
+               loading="lazy"/>
+        </div>
+        <h5 class="card-title fw-bold">{{ member.name }}</h5>
+        <h6 class="card-subtitle mb-2 text-primary">{{ member.position }}</h6>
+        <p class="card-text text-muted">{{ member.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- CTA -->
+    <div class="row mt-5">
+      <div class="col-12 text-center">
+        <div class="bg-primary text-white rounded-3 p-5">
+          <h3 class="fw-bold mb-3">¿Listo para comenzar?</h3>
+          <p class="mb-4">Únete a miles de usuarios que ya confían en nuestra plataforma</p>
+          <button class="btn btn-light btn-lg">Comenzar Ahora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

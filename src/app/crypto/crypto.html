@@ -1,0 +1,53 @@
+<div class="container-fluid px-5 mt-4 justify-content-between">
+    <h1 class="mb-4">Precios crypto</h1>
+
+    <div *ngIf="loading" class="d-flex justify-content-center">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <div *ngIf="error" class="alert alert-danger" role="alert">{{ error }}</div>
+
+    <div class="crypto-wrapper row">
+    <div class="list-column col-12 col-md-6" [class.shifted]="listShifted">
+            <div *ngIf="cryptos.length > 0" class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Coin</th>
+                            <th>Price</th>
+                            <th>24h Change</th>
+                            <th>Market Cap</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let crypto of cryptos" (click)="selectCrypto(crypto)" [class.active]="selected?.id === crypto.id" style="cursor: pointer;">
+                            <td>{{ crypto.market_cap_rank }}</td>
+                            <td>
+                                <img [src]="crypto.image" [alt]="crypto.name" class="crypto-icon" />
+                                <span class="fs-5">{{ crypto.name }} ({{ crypto.symbol.toUpperCase() }})</span>
+                            </td>
+                            <td class="fs-5">${{ crypto.current_price | number:'1.2-2' }}</td>
+                            <td [ngClass]="{'text-success': crypto.price_change_percentage_24h > 0, 'text-danger': crypto.price_change_percentage_24h < 0}" class="fs-5">
+                                {{ crypto.price_change_percentage_24h > 0 ? '+' : '' }}{{ crypto.price_change_percentage_24h | number:'1.2-2' }}%
+                            </td>
+                            <td class="fs-5">${{ crypto.market_cap | number }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    <div class="chart-column col-12 col-md-6" *ngIf="selected">
+            <div class="chart-header d-flex justify-content-between align-items-center mb-2">
+            
+                <button class="btn btn-sm btn-outline-secondary" (click)="selectCrypto(selected)">Cerrar</button>
+            </div>
+            <div class="chart-container">
+                <div #chartContainer id="tv-chart"></div>
+            </div>
+        </div>
+    </div>
+</div>
