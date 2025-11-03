@@ -19,9 +19,6 @@
               <tr>
                 <th class="fs-5">#</th>
                 <th class="fs-5">Índice</th>
-                <th class="fs-5">Precio</th>
-                <th class="fs-5">Cambio %</th>
-                <th class="fs-5">Símbolo</th>
               </tr>
             </thead>
             <tbody>
@@ -32,17 +29,8 @@
                 <td class="fs-5">{{ i + 1 }}</td>
                 <td class="fw-bold fs-5">{{ si.name }}</td>
                 <td>
-                  <span class="price fs-5">{{ getStockPrice(si.symbol) }}</span>
-                </td>
-                <td>
-                  <span class="change" 
-                        [class.text-success]="isPositiveChange(si.symbol)" 
-                        [class.text-danger]="isNegativeChange(si.symbol)">
-                    {{ getStockChangePercent(si.symbol) }}
-                  </span>
-                </td>
-                <td>
-                  <small class="text-muted">{{ si.symbol }}</small>
+                  <img [src]="getCountryFlag(si.country)" [alt]="si.country" style="width: 50px; height:30px; margin-right: 5px;">
+                  {{ getCountryName(si.country) }}
                 </td>
               </tr>
             </tbody>

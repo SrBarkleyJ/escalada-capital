@@ -4,17 +4,19 @@ import { CommonModule } from '@angular/common';
 import { PersonalComponent } from "./personal/personal";
 import { StockComponent } from './stock/stock';
 import { CryptoComponent } from './crypto/crypto';
+import { Terms } from "./terms/terms";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet, 
+    RouterOutlet,
     CommonModule,
-    PersonalComponent, 
-    CryptoComponent, 
-    StockComponent
-  ],
+    PersonalComponent,
+    CryptoComponent,
+    StockComponent,
+    Terms
+],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

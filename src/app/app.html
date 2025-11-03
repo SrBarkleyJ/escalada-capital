@@ -43,6 +43,7 @@
     <app-stock *ngIf="activeSection() === 'stock'"></app-stock>
     <app-crypto *ngIf="activeSection() === 'crypto'"></app-crypto>
     <app-personal *ngIf="activeSection() === 'personal'"></app-personal>
+    <app-terms *ngIf="activeSection() === 'terms'"></app-terms>
   </div>
 </main>
 
@@ -50,11 +51,12 @@
 <footer class="site-footer bg-light text-center text-md-start">
   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
     <div class="mb-3 mb-md-0">
-      © <strong>Escalada Capital</strong> — Todos los derechos reservados
+      © <strong>Escalada Capital — Todos los derechos reservados</strong>
     </div>
     <div>
-      <a class="me-3 text-muted" href="#">Privacy</a>
-      <a class="text-muted" href="#">Terms</a>
+      <button class="btn btn-outline-light fs-6 mx-1"
+                (click)="showSection('terms')"
+                [class.active]="activeSection() === 'terms'">Privacy terms</button>
     </div>
   </div>
 </footer>

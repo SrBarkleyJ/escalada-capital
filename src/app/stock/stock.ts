@@ -2,9 +2,13 @@ import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StockService, StockQuote } from '../services/stock.service';
 
-interface StockIndex {
+interface StockProfile {
   name: string;
   symbol: string;
+  country: string;
+  currency: string;
+  exchange: string;
+  companyName: string;
 }
 
 @Component({
@@ -13,31 +17,164 @@ interface StockIndex {
   imports: [CommonModule],
   templateUrl: './stock.html',
   styleUrls: ['./stock.css']
-})export class StockComponent implements OnInit {
-  stockIndices: StockIndex[] = [
-    // ✅ VERIFICADO - Símbolos correctos
-    { name: 'S&P 500', symbol: '^GSPC' },
-    { name: 'Nasdaq 100', symbol: '^NDX' },
-    { name: 'Dow Jones', symbol: '^DJI' },
-  
-    { name: 'FTSE 100', symbol: '^FTSE' },
-    { name: 'Nikkei 225', symbol: '^N225' },
-    { name: 'DAX', symbol: '^GDAXI' },
-    { name: 'Hang Seng', symbol: '^HSI' },
-    { name: 'CAC 40', symbol: '^FCHI' },
-    { name: 'IBEX 35', symbol: '^IBEX' },
-    { name: 'S&P/TSX Composite', symbol: '^GSPTSE' },
-    { name: 'SMI (Switzerland)', symbol: '^SSMI' },
-    { name: 'ASX 200 (Australia)', symbol: '^AXJO' },
-    { name: 'KOSPI (South Korea)', symbol: '^KS11' },
-    { name: 'Sensex (India)', symbol: '^BSESN' },
-    { name: 'Bovespa (Brazil)', symbol: '^BVSP' },
-    { name: 'IPC Mexico', symbol: '^MXX' },
-    { name: 'Shanghai Composite', symbol: '^SSEC' },
-    { name: 'Russell 2000', symbol: '^RUT' }
+})
+export class StockComponent implements OnInit {
+
+  stockIndices: StockProfile[] = [
+    // ✅ AMERICANOS
+    { 
+      name: 'S&P 500', 
+      symbol: '^GSPC', 
+      country: 'US', 
+      currency: 'USD', 
+      exchange: 'NASDAQ', 
+      companyName: 'S&P 500 Index' 
+    },
+    { 
+      name: 'Nasdaq 100', 
+      symbol: '^NDX', 
+      country: 'US', 
+      currency: 'USD', 
+      exchange: 'NASDAQ', 
+      companyName: 'Nasdaq 100 Index' 
+    },
+    { 
+      name: 'Dow Jones', 
+      symbol: '^DJI', 
+      country: 'US', 
+      currency: 'USD', 
+      exchange: 'NYSE', 
+      companyName: 'Dow Jones Industrial Average' 
+    },
+    { 
+      name: 'Russell 2000', 
+      symbol: '^RUT', 
+      country: 'US', 
+      currency: 'USD', 
+      exchange: 'NYSE', 
+      companyName: 'Russell 2000 Index' 
+    },
+
+    // ✅ EUROPEOS
+    { 
+      name: 'FTSE 100', 
+      symbol: '^FTSE', 
+      country: 'UK', 
+      currency: 'GBP', 
+      exchange: 'LSE', 
+      companyName: 'FTSE 100 Index' 
+    },
+    { 
+      name: 'DAX', 
+      symbol: '^GDAXI', 
+      country: 'DE', 
+      currency: 'EUR', 
+      exchange: 'XETRA', 
+      companyName: 'DAX Performance Index' 
+    },
+    { 
+      name: 'CAC 40', 
+      symbol: '^FCHI', 
+      country: 'FR', 
+      currency: 'EUR', 
+      exchange: 'EURONEXT', 
+      companyName: 'CAC 40 Index' 
+    },
+    { 
+      name: 'IBEX 35', 
+      symbol: '^IBEX', 
+      country: 'ES', 
+      currency: 'EUR', 
+      exchange: 'BME', 
+      companyName: 'IBEX 35 Index' 
+    },
+    { 
+      name: 'SMI (Switzerland)', 
+      symbol: '^SSMI', 
+      country: 'CH', 
+      currency: 'CHF', 
+      exchange: 'SIX', 
+      companyName: 'Swiss Market Index' 
+    },
+
+    // ✅ ASIÁTICOS
+    { 
+      name: 'Nikkei 225', 
+      symbol: '^N225', 
+      country: 'JP', 
+      currency: 'JPY', 
+      exchange: 'TSE', 
+      companyName: 'Nikkei 225 Index' 
+    },
+    { 
+      name: 'Hang Seng', 
+      symbol: '^HSI', 
+      country: 'HK', 
+      currency: 'HKD', 
+      exchange: 'HKEX', 
+      companyName: 'Hang Seng Index' 
+    },
+    { 
+      name: 'Shanghai Composite', 
+      symbol: '^SSEC', 
+      country: 'CN', 
+      currency: 'CNY', 
+      exchange: 'SSE', 
+      companyName: 'Shanghai Composite Index' 
+    },
+    { 
+      name: 'KOSPI (South Korea)', 
+      symbol: '^KS11', 
+      country: 'KR', 
+      currency: 'KRW', 
+      exchange: 'KRX', 
+      companyName: 'KOSPI Index' 
+    },
+    { 
+      name: 'ASX 200 (Australia)', 
+      symbol: '^AXJO', 
+      country: 'AU', 
+      currency: 'AUD', 
+      exchange: 'ASX', 
+      companyName: 'S&P/ASX 200 Index' 
+    },
+    { 
+      name: 'Sensex (India)', 
+      symbol: '^BSESN', 
+      country: 'IN', 
+      currency: 'INR', 
+      exchange: 'BSE', 
+      companyName: 'S&P BSE Sensex' 
+    },
+
+    // ✅ LATINOAMERICANOS
+    { 
+      name: 'Bovespa (Brazil)', 
+      symbol: '^BVSP', 
+      country: 'BR', 
+      currency: 'BRL', 
+      exchange: 'B3', 
+      companyName: 'IBOVESPA Index' 
+    },
+    { 
+      name: 'IPC Mexico', 
+      symbol: '^MXX', 
+      country: 'MX', 
+      currency: 'MXN', 
+      exchange: 'BMV', 
+      companyName: 'IPC Mexico Index' 
+    },
+    { 
+      name: 'S&P/TSX Composite', 
+      symbol: '^GSPTSE', 
+      country: 'CA', 
+      currency: 'CAD', 
+      exchange: 'TSX', 
+      companyName: 'S&P/TSX Composite Index' 
+    }
   ];
 
-  selectedStock: StockIndex | null = null;
+  selectedStock: StockProfile | null = null;
   @ViewChild('stockChartContainer', { static: false }) stockChartContainer!: ElementRef<HTMLDivElement>;
   stockWidget: any = null;
   stockQuotesMap: { [symbol: string]: StockQuote } = {};
@@ -50,20 +187,65 @@ interface StockIndex {
     this.loadStockData();
   }
 
+  // Método para obtener el nombre del país completo
+  getCountryName(countryCode: string): string {
+    const countryNames: {[key: string]: string} = {
+      'US': 'Estados Unidos',
+      'UK': 'Reino Unido', 
+      'DE': 'Alemania',
+      'FR': 'Francia',
+      'ES': 'España',
+      'CH': 'Suiza',
+      'JP': 'Japón',
+      'HK': 'Hong Kong',
+      'CN': 'China',
+      'KR': 'Corea del Sur',
+      'AU': 'Australia',
+      'IN': 'India',
+      'BR': 'Brasil',
+      'MX': 'México',
+      'CA': 'Canadá'
+    };
+    
+    return countryNames[countryCode] || countryCode;
+  }
+
+  // Método para obtener la bandera (opcional)
+  // En tu componente
+getCountryFlag(countryCode: string): string {
+  const flagUrls: {[key: string]: string} = {
+    'US': 'https://flagcdn.com/w40/us.png',
+    'UK': 'https://flagcdn.com/w40/gb.png',
+    'DE': 'https://flagcdn.com/w40/de.png',
+    'FR': 'https://flagcdn.com/w40/fr.png',
+    'ES': 'https://flagcdn.com/w40/es.png',
+    'CH': 'https://flagcdn.com/w40/ch.png',
+    'JP': 'https://flagcdn.com/w40/jp.png',
+    'HK': 'https://flagcdn.com/w40/hk.png',
+    'CN': 'https://flagcdn.com/w40/cn.png',
+    'KR': 'https://flagcdn.com/w40/kr.png',
+    'AU': 'https://flagcdn.com/w40/au.png',
+    'IN': 'https://flagcdn.com/w40/in.png',
+    'BR': 'https://flagcdn.com/w40/br.png',
+    'MX': 'https://flagcdn.com/w40/mx.png',
+    'CA': 'https://flagcdn.com/w40/ca.png'
+  };
+  
+  return flagUrls[countryCode] || '';
+}
   private loadStockData() {
     const fmpSymbols = this.stockIndices.map(idx => idx.symbol);
     
     this.stockService.getIndexQuotes(fmpSymbols).subscribe({
       next: (quotes) => {
+        console.log('✅ Datos recibidos del servicio:', quotes);
+        
         quotes.forEach(q => {
+          console.log(`📊 ${q.symbol}: $${q.price} | ${q.changesPercentage}%`);
           this.stockQuotesMap[q.symbol] = q;
         });
-        this.isLoading = false;
         
-        if (quotes.length > 0) {
-          console.log('Estructura del primer quote:', quotes[0]);
-          console.log('Propiedades disponibles:', Object.keys(quotes[0]));
-        }
+        this.isLoading = false;
       },
       error: (err) => {
         console.error('Error fetching stock quotes:', err);
@@ -72,50 +254,20 @@ interface StockIndex {
     });
   }
 
-  // ✅ MAPEO 100% VERIFICADO CON TRADINGVIEW
+  // Los demás métodos permanecen igual...
   getTradingViewSymbol(fmpSymbol: string): string | null {
     const symbolMap: Record<string, string> = {
-      // ✅ ÍNDICES AMERICANOS - VERIFICADOS
-      '^GSPC': 'SPX',                    // S&P 500 - CORRECTO
-      '^NDX': 'NASDAQ:NDX',              // Nasdaq 100 - CORRECTO  
-      '^DJI': 'DOWI',                    // Dow Jones - CORRECTO
-      '^RUT': 'RUT',                     // Russell 2000 - CORRECTO
-      
-      // ✅ ÍNDICES EUROPEOS - VERIFICADOS
-      '^STOXX50E': 'STOXX50E',           // Euro Stoxx 50 - CORRECTO
-      '^FTSE': 'FTSE:UKX',               // FTSE 100 - CORRECTO
-      '^GDAXI': 'DE30',                  // DAX Germany - CORREGIDO (DAX → DE30)
-      '^FCHI': 'FR40',                   // CAC 40 - CORREGIDO (CAC → FR40)
-      '^IBEX': 'ES35',                   // IBEX 35 - CORREGIDO (IBEX35 → ES35)
-      '^SSMI': 'SWI20',                  // SMI Switzerland - CORREGIDO (SMI → SWI20)
-      
-      // ✅ ÍNDICES ASIÁTICOS - VERIFICADOS
-      '^N225': 'JP225',                  // Nikkei 225 - CORREGIDO (NIKKEI → JP225)
-      '^HSI': 'HK50',                    // Hang Seng - CORRECTO
-      '^KS11': 'KOSPI',                  // KOSPI South Korea - CORRECTO
-      '^SSEC': 'CN50',                   // Shanghai Composite - CORREGIDO (SSE:000001 → CN50)
-      '^AXJO': 'AU200',                  // ASX 200 Australia - CORREGIDO (AS51 → AU200)
-      
-      // ✅ ÍNDICES LATINOAMERICANOS - VERIFICADOS
-      '^BVSP': 'BOVESPA',                // Bovespa Brazil - CORREGIDO (IBOV → BOVESPA)
-      '^MXX': 'IPC',                     // IPC Mexico - CORRECTO
-      
-      // ✅ OTROS ÍNDICES - VERIFICADOS
-      '^GSPTSE': 'TSX:OSPTX',            // S&P/TSX Composite - CORRECTO
-      '^BSESN': 'SENSEX'                 // Sensex India - CORRECTO
+      '^GSPC': 'SPX', '^NDX': 'NASDAQ:NDX', '^DJI': 'DOWI', '^RUT': 'RUT',
+      '^FTSE': 'FTSE:UKX', '^GDAXI': 'DE30', '^FCHI': 'FR40', '^IBEX': 'ES35',
+      '^SSMI': 'SWI20', '^N225': 'JP225', '^HSI': 'HK50', '^KS11': 'KOSPI',
+      '^SSEC': 'CN50', '^AXJO': 'AU200', '^BVSP': 'BOVESPA', '^MXX': 'IPC',
+      '^GSPTSE': 'TSX:OSPTX', '^BSESN': 'SENSEX'
     };
 
-    const mappedSymbol = symbolMap[fmpSymbol];
-    if (!mappedSymbol) {
-      console.warn(`⚠️ No mapping found for ${fmpSymbol}`);
-      return null;
-    }
-    
-    console.log(`✅ Mapped ${fmpSymbol} to ${mappedSymbol}`);
-    return mappedSymbol;
+    return symbolMap[fmpSymbol] || null;
   }
 
-  selectStockIndex(index: StockIndex) {
+  selectStockIndex(index: StockProfile) {
     if (this.selectedStock?.symbol === index.symbol) {
       this.selectedStock = null;
       this.destroyStockWidget();
@@ -136,6 +288,40 @@ interface StockIndex {
     }, 100);
   }
 
+  // Los métodos restantes (loadTradingViewScript, loadStockWidget, destroyStockWidget, etc.)
+  // permanecen exactamente igual que en tu código anterior...
+
+  getStockPrice(symbol: string): string {
+    const quote = this.stockQuotesMap[symbol];
+    if (!quote) return '-';
+    return quote.price ? quote.price.toFixed(2) : '-';
+  }
+
+  getStockChangePercent(symbol: string): string {
+    const quote = this.stockQuotesMap[symbol];
+    if (!quote) return '-';
+    const changePercent = quote.changesPercentage;
+    if (changePercent === undefined || changePercent === null) return '-';
+    return changePercent > 0 ? `+${changePercent.toFixed(2)}%` : `${changePercent.toFixed(2)}%`;
+  }
+
+  isPositiveChange(symbol: string): boolean {
+    const quote = this.stockQuotesMap[symbol];
+    if (!quote) return false;
+    return quote.changesPercentage > 0;
+  }
+
+  isNegativeChange(symbol: string): boolean {
+    const quote = this.stockQuotesMap[symbol];
+    if (!quote) return false;
+    return quote.changesPercentage < 0;
+  }
+
+  refreshData() {
+    this.isLoading = true;
+    this.stockQuotesMap = {};
+    this.loadStockData();
+  }
   private loadTradingViewScript(): Promise<void> {
     return new Promise((resolve, reject) => {
       if ((window as any).TradingView) {
@@ -264,36 +450,15 @@ interface StockIndex {
     this.chartLoading = false;
   }
 
-  // Resto de métodos保持不变...
-  getStockPrice(symbol: string): string {
-    const quote = this.stockQuotesMap[symbol];
-    const price = quote?.price;
-    if (price === undefined || price === null) return '-';
-    return price.toFixed(2);
-  }
+  
 
-  getStockChangePercent(symbol: string): string {
+  getStockChange(symbol: string): string {
     const quote = this.stockQuotesMap[symbol];
-    const changePercent = quote?.changesPercentage || quote?.changesPercentage || quote?.percentChange;
-    if (changePercent === undefined || changePercent === null) return '-';
-    return changePercent > 0 ? `+${changePercent.toFixed(2)}%` : `${changePercent.toFixed(2)}%`;
-  }
-
-  isPositiveChange(symbol: string): boolean {
-    const quote = this.stockQuotesMap[symbol];
-    const changePercent = quote?.changesPercentage || quote?.changesPercentage || quote?.percentChange;
-    return changePercent > 0;
-  }
-
-  isNegativeChange(symbol: string): boolean {
-    const quote = this.stockQuotesMap[symbol];
-    const changePercent = quote?.changesPercentage || quote?.changesPercentage || quote?.percentChange;
-    return changePercent < 0;
-  }
-
-  refreshData() {
-    this.isLoading = true;
-    this.stockQuotesMap = {};
-    this.loadStockData();
+    if (!quote) return '-';
+    
+    // Si necesitas el cambio absoluto en lugar del porcentaje
+    const change = quote.changeAmount;
+    if (change === undefined || change === null) return '-';
+    return change > 0 ? `+${change.toFixed(2)}` : change.toFixed(2);
   }
 }
