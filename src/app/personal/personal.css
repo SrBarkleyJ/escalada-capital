@@ -46,7 +46,18 @@ h2{
   background-clip: text;
   opacity: 1;
 }
+.img-fluid {
+  transition: transform 0.3s ease;
+}
 
+.img-fluid:hover {
+  transform: scale(1.02);
+}
+
+/* Espaciado para las miniaturas */
+.d-flex.gap-3 {
+  gap: 1rem !important;
+}
 /* Team Section */
 .about-us-section .team-card {
   transition: all 0.4s ease;
@@ -134,7 +145,7 @@ h2{
 
 .about-us-section .text-muted {
   color: #000000 !important;
-  font-size: medium;
+  font-size: large;
 }
 
 /* Responsive Design */

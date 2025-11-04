@@ -1,0 +1,80 @@
+<div class="container-fluid px-4 mt-4">
+  <h1 class="mb-4 text-center">📰 Últimas Noticias Financieras</h1>
+
+  <!-- Filtros por categoría -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="btn-group" role="group">
+        <button 
+          *ngFor="let cat of categorias"
+          type="button" 
+          class="btn btn-outline-primary"
+          [class.active]="categoriaSeleccionada === cat"
+          (click)="filtrarPorCategoria(cat)">
+          {{ getCategoriaDisplayName(cat) }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading -->
+  <div *ngIf="isLoading" class="text-center py-5">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Cargando noticias...</span>
+    </div>
+    <p class="mt-2">Cargando noticias...</p>
+  </div>
+
+  <!-- Noticias destacadas -->
+  <div *ngIf="!isLoading" class="row mb-4">
+    <ng-container *ngFor="let noticia of noticiasFiltradas">
+      <div class="col-6" *ngIf="noticia.destacada">
+        <div class="card border-primary mb-3">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <span class="fs-1 me-3">{{ noticia.imagen }}</span>
+              <div>
+                <h5 class="card-title mb-1 fs-4">{{ noticia.titulo }}</h5>
+                <p>{{ noticia.fecha }} • {{ getCategoriaDisplayName(noticia.categoria) }}</p>
+              </div>
+            </div>
+            <p class="card-text fs-5">{{ noticia.resumen }}</p>
+            <div>
+              <span *ngFor="let tag of noticia.tags" class="badge bg-secondary me-1">
+                {{ tag }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Grid de noticias normales -->
+  <div *ngIf="!isLoading" class="row">
+    <ng-container *ngFor="let noticia of noticiasFiltradas">
+      <div class="col-md-6 col-lg-4 mb-3" *ngIf="!noticia.destacada">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex align-items-start mb-2">
+              <span class="fs-3 me-2">{{ noticia.imagen }}</span>
+              <div>
+                <h6 class="card-title fs-4">{{ noticia.titulo }}</h6>
+                <p>{{ noticia.fecha }}</p>
+              </div>
+            </div>
+            <p class="card-text fs-5">{{ noticia.resumen }}</p>
+            <div class="mt-auto">
+              <span class="badge bg-light text-dark">{{ getCategoriaDisplayName(noticia.categoria) }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Mensaje si no hay noticias -->
+  <div *ngIf="!isLoading && noticiasFiltradas.length === 0" class="text-center py-5">
+    <p class="text-muted">No hay noticias en esta categoría.</p>
+  </div>
+</div>

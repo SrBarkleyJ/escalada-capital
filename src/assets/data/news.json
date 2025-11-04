@@ -1,0 +1,214 @@
+{
+  "noticias": [
+     {
+      "id": 1,
+      "titulo": "S&P 500 alcanza máximos históricos impulsado por resultados empresariales",
+      "resumen": "El índice S&P 500 cerró en niveles récord gracias a los sólidos resultados de las grandes tecnológicas.",
+      "categoria": "mercados",
+      "fecha": "2025-01-15",
+      "imagen": "📈",
+      "destacada": true,
+      "tags": ["SP500", "mercados", "EEUU"]
+    },
+    {
+      "id": 2,
+      "titulo": "Bitcoin supera los $60,000 tras aprobación de nuevos ETFs",
+      "resumen": "La criptomoneda líder experimenta un rally del 15% esta semana tras las nuevas regulaciones.",
+      "categoria": "cripto",
+      "fecha": "2025-01-14",
+      "imagen": "₿",
+      "destacada": true,
+      "tags": ["Bitcoin", "ETF", "criptomonedas"]
+    },
+    {
+      "id": 3,
+      "titulo": "La Fed mantiene tipos de interés sin cambios en reunión de enero",
+      "resumen": "La Reserva Federal decide mantener los tipos en el rango actual del 5.25%-5.50%.",
+      "categoria": "economia",
+      "fecha": "2025-01-13",
+      "imagen": "🏦",
+      "destacada": false,
+      "tags": ["Fed", "tipos interés", "economía"]
+    },
+    {
+      "id": 4,
+      "titulo": "DAX alemán muestra fortaleza ante recuperación manufacturera",
+      "resumen": "El índice alemán gana un 2.3% impulsado por los datos positivos del sector industrial.",
+      "categoria": "europa",
+      "fecha": "2025-01-12",
+      "imagen": "🇩🇪",
+      "destacada": false,
+      "tags": ["DAX", "Alemania", "europa"]
+    },
+    {
+      "id": 5,
+      "titulo": "Nikkei 225 se beneficia de la debilidad del yen",
+      "resumen": "El índice japonés sube un 1.8% gracias a las exportaciones más competitivas.",
+      "categoria": "asia",
+      "fecha": "2025-01-11",
+      "imagen": "🇯🇵",
+      "destacada": false,
+      "tags": ["Nikkei", "Japón", "yen"]
+    },
+    {
+      "id": 6,
+      "titulo": "IBEX 35 lidera ganancias en Europa con avance del 1.5%",
+      "resumen": "El mercado español destaca entre los europeos gracias al sector bancario.",
+      "categoria": "espana",
+      "fecha": "2025-01-10",
+      "imagen": "🇪🇸",
+      "destacada": false,
+      "tags": ["IBEX", "España", "bancos"]
+    },
+    {
+      "id": 7,
+      "titulo": "Ethereum actualiza su red con mejoras de escalabilidad",
+      "resumen": "La actualización 'Dencun' reduce significativamente las fees de transacción en la red Ethereum.",
+      "categoria": "cripto",
+      "fecha": "2025-01-09",
+      "imagen": "🔷",
+      "destacada": false,
+      "tags": ["Ethereum", "blockchain", "tecnología"]
+    },
+    {
+      "id": 8,
+      "titulo": "NASDAQ Composite rompe barrera de los 16,000 puntos",
+      "resumen": "El índice tecnológico alcanza nuevos máximos impulsado por semiconductores y software.",
+      "categoria": "mercados",
+      "fecha": "2025-01-08",
+      "imagen": "💻",
+      "destacada": true,
+      "tags": ["NASDAQ", "tecnología", "semiconductores"]
+    },
+    {
+      "id": 9,
+      "titulo": "Inflación en la Eurozona cae al 2.1% en diciembre",
+      "resumen": "El IPC armonizado se sitúa cerca del objetivo del BCE, aliviando presiones inflacionarias.",
+      "categoria": "economia",
+      "fecha": "2025-01-07",
+      "imagen": "💰",
+      "destacada": false,
+      "tags": ["inflación", "Eurozona", "BCE"]
+    },
+    {
+      "id": 10,
+      "titulo": "FTSE 100 resiste ante incertidumbre Brexit",
+      "resumen": "El índice británico muestra resiliencia pese a las tensiones comerciales post-Brexit.",
+      "categoria": "europa",
+      "fecha": "2025-01-06",
+      "imagen": "🇬🇧",
+      "destacada": false,
+      "tags": ["FTSE", "Reino Unido", "Brexit"]
+    },
+    {
+      "id": 11,
+      "titulo": "Shanghai Composite sube con estímulos del gobierno chino",
+      "resumen": "Medidas de apoyo económico impulsan el mercado bursátil chino un 2.1%.",
+      "categoria": "asia",
+      "fecha": "2025-01-05",
+      "imagen": "🇨🇳",
+      "destacada": false,
+      "tags": ["Shanghai", "China", "estímulos"]
+    },
+    {
+      "id": 12,
+      "titulo": "Solana supera a Cardano en capitalización de mercado",
+      "resumen": "La blockchain de alta velocidad gana terreno en el ecosistema cripto.",
+      "categoria": "cripto",
+      "fecha": "2025-01-04",
+      "imagen": "⚡",
+      "destacada": false,
+      "tags": ["Solana", "Cardano", "blockchain"]
+    },
+    {
+      "id": 13,
+      "titulo": "Bolsa de Madrid registra récord de inversión extranjera",
+      "resumen": "Los inversores internacionales aumentan su exposición al mercado español un 15%.",
+      "categoria": "espana",
+      "fecha": "2025-01-03",
+      "imagen": "🏛️",
+      "destacada": false,
+      "tags": ["Bolsa Madrid", "inversión", "España"]
+    },
+    {
+      "id": 14,
+      "titulo": "Apple presenta resultados récord en ventas de iPhone",
+      "resumen": "La compañía supera expectativas con un crecimiento del 12% en ingresos.",
+      "categoria": "mercados",
+      "fecha": "2025-01-02",
+      "imagen": "🍎",
+      "destacada": true,
+      "tags": ["Apple", "tecnología", "ganancias"]
+    },
+    {
+      "id": 15,
+      "titulo": "Bancos españoles mejoran previsiones de beneficio para 2025",
+      "resumen": "Santander, BBVA y CaixaBank elevan estimaciones gracias al margen de interés.",
+      "categoria": "espana",
+      "fecha": "2025-01-01",
+      "imagen": "🏦",
+      "destacada": false,
+      "tags": ["bancos", "España", "finanzas"]
+    },
+    {
+      "id": 16,
+      "titulo": "Goldman Sachs lanza nuevo fondo de inversión en cripto",
+      "resumen": "El gigante bancario expande su oferta de productos digitales para clientes institucionales.",
+      "categoria": "cripto",
+      "fecha": "2024-12-31",
+      "imagen": "🏢",
+      "destacada": false,
+      "tags": ["Goldman Sachs", "inversión", "institucional"]
+    },
+    {
+      "id": 17,
+      "titulo": "Tesla anuncia nueva fábrica en Europa",
+      "resumen": "La compañía de Elon Musk elige España para su tercera gigafactory europea.",
+      "categoria": "espana",
+      "fecha": "2024-12-30",
+      "imagen": "🚗",
+      "destacada": true,
+      "tags": ["Tesla", "España", "inversión"]
+    },
+    {
+      "id": 18,
+      "titulo": "Mercado de bonos muestra señales de estabilidad",
+      "resumen": "Los rendimientos de la deuda soberana se normalizan tras meses de volatilidad.",
+      "categoria": "economia",
+      "fecha": "2024-12-29",
+      "imagen": "📊",
+      "destacada": false,
+      "tags": ["bonos", "deuda", "mercados"]
+    },
+    {
+      "id": 19,
+      "titulo": "Sector renovable español atrae 3.000 millones en inversión",
+      "resumen": "Proyectos de energía solar y eólica lideran la captación de capital internacional.",
+      "categoria": "espana",
+      "fecha": "2024-12-28",
+      "imagen": "🌞",
+      "destacada": false,
+      "tags": ["renovables", "España", "inversión"]
+    },
+    {
+      "id": 20,
+      "titulo": "DeFi supera los $100 mil millones en valor bloqueado",
+      "resumen": "Las finanzas descentralizadas alcanzan nuevo hito histórico en adopción.",
+      "categoria": "cripto",
+      "fecha": "2024-12-27",
+      "imagen": "🔄",
+      "destacada": false,
+      "tags": ["DeFi", "finanzas", "blockchain"]
+    },
+    {
+      "id": 21,
+      "titulo": "Mercado laboral estadounidense muestra fortaleza",
+      "resumen": "El desempleo cae al 3.8%, lowest level en dos décadas.",
+      "categoria": "economia",
+      "fecha": "2024-12-26",
+      "imagen": "👥",
+      "destacada": false,
+      "tags": ["empleo", "EEUU", "economía"]
+    }
+  ]
+}

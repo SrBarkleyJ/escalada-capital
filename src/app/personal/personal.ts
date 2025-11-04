@@ -16,6 +16,24 @@ interface TeamMember {
   styleUrls: ['./personal.css']
 })
 export class PersonalComponent {
+
+  carouselImages = [
+    'assets/images/uno.jpg',
+    'assets/images/dos.jpg',
+    'assets/images/tres.jpg',
+    'assets/images/cuatro.jpg',
+    'assets/images/cinco.jpg',
+  ];
+
+ selectedImage: string | null = null;
+
+  selectImage(image: string) {
+    this.selectedImage = this.selectedImage === image ? null : image;
+  }
+
+  closeImage() {
+    this.selectedImage = null;
+  }
   // Imágenes base64 como fallback
   teamMembers: TeamMember[] = [
     {
@@ -56,6 +74,7 @@ export class PersonalComponent {
     }
   ];
   defaultAvatar: any;
+
  ngOnInit() {
     console.log('🔄 Iniciando componente Personal');
     console.log('📁 Ruta base:', window.location.origin);

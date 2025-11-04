@@ -37,6 +37,37 @@
       </div>
     </div>
 
+
+    <!-- Imagen seleccionada en grande -->
+    <div class="row mb-4" *ngIf="selectedImage">
+      <div class="col-12 text-center">
+        <div class="position-relative">
+          <img [src]="selectedImage" 
+               class="img-fluid rounded-3 shadow-lg"
+               style="max-height: 500px; width: auto;"
+               alt="Imagen seleccionada">
+        </div>
+      </div>
+    </div>
+
+    <!-- Fila de miniaturas -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <button *ngFor="let image of carouselImages" 
+                  class="btn btn-outline-secondary p-1 border-2"
+                  [class.btn-primary]="selectedImage === image"
+                  (click)="selectImage(image)">
+            <img [src]="image" 
+                 class="rounded-2"
+                 style="width: 100px; height: 60px; object-fit: cover;"
+                 [alt]="'Miniatura ' + image">
+          </button>
+        </div>
+      </div>
+    </div>
+
+
     <div class="row">
   <div class="col-12 text-center mb-5">
     <h1 class="fw-bold">Nuestro Equipo</h1>
@@ -52,9 +83,9 @@
                class="rounded-circle img-fluid"
                loading="lazy"/>
         </div>
-        <h5 class="card-title fw-bold">{{ member.name }}</h5>
-        <h6 class="card-subtitle mb-2 text-primary">{{ member.position }}</h6>
-        <p class="card-text text-muted">{{ member.description }}</p>
+        <h5 class="card-title fw-bold fs-3">{{ member.name }}</h5>
+        <h6 class="card-subtitle mb-2 text-primary fs-5">{{ member.position }}</h6>
+        <p class="card-text fs-5">{{ member.description }}</p>
       </div>
     </div>
   </div>

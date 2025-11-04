@@ -1,0 +1,20 @@
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 95%;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: rgba(255, 255, 255, 0.232);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.527);
+}
+
+.btn-group .btn {
+  text-transform: capitalize;
+}
+
+.badge {
+  font-size: 0.7em;
+}

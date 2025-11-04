@@ -19,20 +19,19 @@
 /* --- FOOTER --- */
 .site-footer {
   width: 100%;
-  background: linear-gradient(180deg, #212529 0%, #607d9a 100%);
- 
-  padding-top: 3rem; /* 👈 separa el footer del contenido principal */
-  padding-bottom: 1.5rem;
-  margin-top: 4rem; /* espacio visual adicional arriba */
+  height: 100%;
+  background: linear-gradient(180deg, #516375 0%, #607d9a 100%);
+  padding-top:2rem;
+  padding-bottom: 2rem;
 }
-
 .site-footer a {
   text-decoration: none;
+  background-color: aquamarine;
 }
 
 .site-footer a:hover {
   text-decoration: underline;
-  color: #0d6efd;
+  color: #0d6dfd;
 }
 .brand-title{
 	font-size: 4rem;
