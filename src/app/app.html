@@ -15,8 +15,35 @@
   </div>
 </section>
 
-<!-- Router outlet for navigation -->
-<router-outlet></router-outlet>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <div class="navbar-nav ms-auto">
+      <a class="btn btn-outline-light fs-4 mx-1" routerLink="/about" routerLinkActive="active">
+        👥 Quiénes Somos
+      </a>
+      <a class="btn btn-outline-light btn-lg fs-4 mx-1" routerLink="/stocks" routerLinkActive="active">
+        📈 Stocks
+      </a>
+      <a class="btn btn-outline-light fs-4 mx-1" routerLink="/crypto" routerLinkActive="active">
+        ₿ Crypto
+      </a>
+      <a class="btn btn-outline-light btn-lg fs-4 mx-1" routerLink="/news" routerLinkActive="active">
+        📰 Noticias
+      </a>
+      <button class="btn btn-outline-light fs-4 mx-1" (click)="toggleTheme()" title="Cambiar tema">
+        <i class="bi" [ngClass]="isDarkTheme ? 'bi-sun-fill' : 'bi-moon-fill'"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Contenido dinámico -->
+<main class="site-main">
+  <div class="container-fluid p-0 dynamic-section">
+    <router-outlet></router-outlet>
+  </div>
+</main>
 
 <!-- Footer -->
 <footer class="site-footer text-center text-md-start">
