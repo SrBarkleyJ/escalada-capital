@@ -1,10 +1,11 @@
 <!-- Hero Section -->
-<section class="hero bg-dark text-white py-3">
+<section class="hero bg-transparent text-white py-3">
   <div class="container d-md-flex align-items-center">
     <div class="hero-content w-100 text-center">
       <div class="brand-hero mb-3 d-flex align-items-center justify-content-center">
         <i class="bi bi-bar-chart-fill fs-1 text-success me-2"></i>
-        <a routerLink="/" class="brand-title fw-bold text-white text-decoration-none">Escalada Capital</a>
+        <a routerLink="/" class="brand-title fw-bold text-white bg-transparent text-decoration-none">Escalada
+          Capital</a>
       </div>
       <h1 class="display-6 fw-bold">Gestión y análisis de mercados para inversores</h1>
       <p class="lead mb-4">
@@ -12,55 +13,14 @@
       </p>
     </div>
   </div>
-</section>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <div class="navbar-nav ms-auto">
-      <a class="btn btn-outline-light fs-4 mx-1"
-         routerLink="/about"
-         routerLinkActive="active">
-        👥 Quiénes Somos
-      </a>
-      <a class="btn btn-outline-light btn-lg fs-4 mx-1"
-         routerLink="/stocks"
-         routerLinkActive="active">
-        📈 Stocks
-      </a>
-      <a class="btn btn-outline-light fs-4 mx-1"
-         routerLink="/crypto"
-         routerLinkActive="active">
-        ₿ Crypto
-      </a>
-      <a class="btn btn-outline-light btn-lg fs-4 mx-1"
-         routerLink="/news"
-         routerLinkActive="active">
-        📰 Noticias
-      </a>
-      
-    </div>
-  </div>
-</nav>
-
-<!-- Contenido dinámico -->
-<main class="site-main">
-  <div class="container-fluid p-0 dynamic-section">
-    <router-outlet></router-outlet>
-  </div>
-</main>
-
-<!-- Footer -->
-<footer class="site-footer text-center text-md-start">
   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
     <div class="mb-3 mb-md-0">
       © <strong>Escalada Capital — Todos los derechos reservados</strong>
     </div>
     <div>
-      <a class="btn btn-outline-dark fs-6 mx-1"
-         routerLink="/terms">
+      <a class="btn btn-outline-dark fs-6 mx-1" routerLink="/terms">
         Privacy terms
       </a>
     </div>
   </div>
-</footer>
+  </footer>

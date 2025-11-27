@@ -9,9 +9,9 @@
   </div>
 
   <div class="stock-wrapper row g-3">
-    
+
     <!-- List Column -->
-    <div class="list-column col-12 col-md-6 pt-5 px-3">
+    <div class="list-column col-12 col-md-6 px-3">
       <div class="table-container h-100">
         <div class="table-responsive h-100 " style="overflow-y: auto;"> <!-- Scroll mantenido -->
           <table class="table table-hover mb-0">
@@ -22,14 +22,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let si of stockIndices; let i = index" 
-                  (click)="selectStockIndex(si)" 
-                  [class.table-primary]="selectedStock?.symbol === si.symbol" 
-                  style="cursor: pointer;">
+              <tr *ngFor="let si of stockIndices; let i = index" (click)="selectStockIndex(si)"
+                [class.table-primary]="selectedStock?.symbol === si.symbol" style="cursor: pointer;">
                 <td class="fs-5">{{ i + 1 }}</td>
                 <td class="fw-bold fs-5">{{ si.name }}</td>
                 <td>
-                  <img [src]="getCountryFlag(si.country)" [alt]="si.country" style="width: 50px; height:30px; margin-right: 5px;">
+                  <img [src]="getCountryFlag(si.country)" [alt]="si.country"
+                    style="width: 50px; height:30px; margin-right: 5px;">
                   {{ getCountryName(si.country) }}
                 </td>
               </tr>
@@ -37,17 +36,3 @@
           </table>
         </div>
       </div>
-    </div>
-
-    <!-- Chart Column -->
-    <div class="chart-column col-12 col-md-6" *ngIf="selectedStock">
-      
-        <div class="chart-header d-flex justify-content-between align-items-center p-3 border-bottom">
-        </div>
-        <div class="chart-container flex-grow-1">
-          <div #stockChartContainer id="tv-stock-chart" style="width:100%; height:100%;"></div>
-        </div>
-      </div>
-    </div>
-
-  </div>

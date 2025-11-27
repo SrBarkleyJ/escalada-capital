@@ -1,1 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --site-bg: #ffffff;
+    --site-text: #212529;
+    --hero-bg-start: #212529;
+    --hero-bg-end: #808080;
+    --hero-text: #716767;
+    --footer-bg-start: #516375;
+    --footer-bg-end: #303131;
+    --link-bg: aquamarine;
+    --link-hover: #0d6dfd;
+    --card-bg: rgba(232, 232, 232, 0.868);
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --card-hover-shadow: rgba(255, 255, 255, 0.527);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --active-row-bg: rgba(0, 123, 255, 0.06);
+    --text-muted: #6c757d;
+}
+
+body.dark-theme {
+    --site-bg: #1c0000;
+    --site-text: #e0e0e0;
+    --hero-bg-start: #060300;
+    --hero-bg-end: #37474f;
+    --hero-text: #e0e0e0;
+    --footer-bg-start: #263238;
+    --footer-bg-end: #37474f;
+    --link-bg: #009688;
+    --link-hover: #80cbc4;
+    --card-bg: rgba(60, 28, 28, 0.803);
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --card-hover-shadow: rgba(255, 255, 255, 0.1);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --active-row-bg: rgba(255, 255, 255, 0.05);
+    --text-muted: #000000;
+}
+
+body {
+    background-color: var(--site-bg);
+    color: var(--site-text);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+@media print {
+
+    /* Hide all app shell elements */
+    .navbar,
+    .site-footer,
+    .hero,
+    .btn-print,
+    .no-print {
+        display: none !important;
+    }
+
+    /* Ensure the body background is white for printing */
+    body {
+        background-color: white !important;
+        color: black !important;
+    }
+
+    /* Ensure the main content takes full width */
+    .site-main,
+    .container-fluid,
+    .dynamic-section {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}

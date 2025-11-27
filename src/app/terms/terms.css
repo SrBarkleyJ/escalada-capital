@@ -1,7 +1,9 @@
 /* Fondo general y estructura */
 .privacy-main {
-  background: #11111100;          /* fondo oscuro elegante */
-  color: #f8f9fa;            /* texto claro */
+  background: #11111100;
+  /* fondo oscuro elegante */
+  color: var(--site-text);
+  /* texto claro */
   min-height: 60vh;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -16,8 +18,9 @@
 }
 
 /* Títulos de secciones */
-h1, h2 {
-  color: #f8f9fa;
+h1,
+h2 {
+  color: var(--site-text);
 }
 
 /* Texto general */
@@ -29,9 +32,11 @@ p {
 
 /* Enlaces dentro del texto */
 a {
-  color: #0dcaf0; /* color info Bootstrap */
+  color: var(--link-hover);
+  /* color info Bootstrap */
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
@@ -39,7 +44,7 @@ a:hover {
 /* Pequeño texto aclaratorio al final */
 .small {
   font-size: 0.9rem;
-  color: #adb5bd;
+  color: var(--text-muted);
 }
 
 /* Adaptación para pantallas pequeñas */
@@ -48,6 +53,7 @@ a:hover {
     padding-left: 0.6rem;
     padding-right: 0.6rem;
   }
+
   p {
     font-size: medium;
   }

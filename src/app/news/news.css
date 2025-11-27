@@ -1,20 +1,33 @@
-.card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  height: 95%;
-  border: none;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  background-color: rgba(255, 255, 255, 0.232);
+.general {
+  background-color: var(--site-bg);
+  color: var(--site-text);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.527);
-}
-
-.btn-group .btn {
+.general .btn-group .btn {
   text-transform: capitalize;
 }
 
-.badge {
+.general .badge {
   font-size: 0.7em;
+}
+
+/* Fixed height for all news cards */
+.news .card {
+  height: 350px;
+  /* adjust as needed */
+  display: flex;
+  flex-direction: column;
+}
+
+.news .card .card-body {
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.news .card .card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

@@ -1,5 +1,6 @@
 .stock-wrapper {
   min-height: 500px;
+  flex-shrink: 0;
 }
 
 .list-column {
@@ -7,7 +8,7 @@
 }
 
 .table-container {
-  background: rgba(255, 255, 255, 0.049);
+  background: transparent;
   border-radius: 8px;
   overflow: hidden;
   height: 100%;
@@ -16,26 +17,25 @@
 .table-responsive {
   border-radius: 8px;
   height: 100%;
-  overflow-y: auto; /* Scroll vertical mantenido */
+  overflow-y: auto;
 }
 
-/* Estilo personalizado para el scroll */
+/* Custom Scrollbar */
 .table-responsive::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 .table-responsive::-webkit-scrollbar-track {
-  background: #f1f1f100;
-  border-radius: 3px;
+  background: transparent;
 }
 
 .table-responsive::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
+  background: rgba(193, 193, 193, 0.3);
   border-radius: 3px;
 }
 
 .table-responsive::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+  background: rgba(168, 168, 168, 0.5);
 }
 
 .chart-column {
@@ -43,7 +43,7 @@
 }
 
 .chart-card {
-  background: rgba(7, 7, 7, 0.023);
+  background: transparent;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -55,27 +55,27 @@
 
 .chart-container {
   min-height: 0;
+  height: 100%;
 }
 
 /* Estilos de tabla */
-.table th { 
-  font-weight: 600; 
-  font-size: 0.95rem; 
+.table th {
+  font-weight: 600;
+  font-size: 0.95rem;
   background: #ffffff00;
- 
   top: 0;
   z-index: 10;
 }
 
-.table td { 
-  vertical-align: middle; 
-  font-size: 0.92rem; 
+.table td {
+  vertical-align: middle;
+  font-size: 0.92rem;
   padding: 0.75rem 0.5rem;
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .table tbody tr:hover {
-  background-color: rgba(0, 123, 255, 0.05);
+  background-color: var(--active-row-bg);
 }
 
 /* Responsive */
@@ -84,28 +84,28 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
-  .list-column, 
+
+  .list-column,
   .chart-column {
     height: 400px;
     margin-bottom: 1rem;
   }
-  
+
   .stock-wrapper {
     min-height: auto;
   }
-  
+
   .chart-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
-  
-  .chart-header > div {
+
+  .chart-header>div {
     width: 100%;
     justify-content: space-between;
   }
-  
+
   /* Scroll más visible en móviles */
   .table-responsive {
     overflow-y: scroll;
